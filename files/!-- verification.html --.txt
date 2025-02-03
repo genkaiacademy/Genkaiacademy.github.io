@@ -1,0 +1,32 @@
+<!-- verification.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualification Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .status { font-size: 20px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Qualification Verification</h2>
+    <p id="verificationStatus" class="status"></p>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const qualified = localStorage.getItem('qualified');
+            const statusElement = document.getElementById('verificationStatus');
+            
+            if (qualified === 'yes') {
+                statusElement.textContent = 'Your qualification status is verified as real.';
+                statusElement.style.color = 'green';
+            } else {
+                statusElement.textContent = 'Your qualification status could not be verified.';
+                statusElement.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

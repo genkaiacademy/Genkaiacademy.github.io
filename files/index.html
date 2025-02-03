@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Qualification Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        form { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input, select, button { width: 100%; margin: 10px 0; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Student Qualification Form</h2>
+    <form id="studentForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" required>
+
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" required>
+
+        <label for="qualified">Qualified in Last Examination:</label>
+        <select id="qualified" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const country = document.getElementById('country').value;
+            const studentId = document.getElementById('studentId').value;
+            const qualified = document.getElementById('qualified').value;
+            
+            if (name && country && studentId) {
+                localStorage.setItem('qualified', qualified);
+                window.location.href = 'verification.html';
+            } else {
+                alert('Please fill all fields.');
+            }
+        }
+    </script>
+</body>
+</html>
