@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submitted</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Form Submitted Successfully!</h1>
+        <p>Your form has been submitted and your qualification status is <strong id="status"></strong>.</p>
+        <a href="index.html">Go back to form</a>
+    </div>
+
+    <script>
+        // Get the qualification status from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const qualification = urlParams.get('qualification');
+        document.getElementById('status').textContent = qualification;
+    </script>
+</body>
+</html>
